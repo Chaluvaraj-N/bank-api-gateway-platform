@@ -1,0 +1,169 @@
+Folder PATH listing for volume OS
+Volume serial number is 00000198 583E:DD4E
+C:\USERS\CHALU\DESKTOP\BANK-API-GATEWAY\FRONTEND\SRC\FEATURES
+|   README.md
+|   
++---aiAssistant
+|   +---api
+|   +---components
+|   \---pages
+|           AiAssistantPage.tsx
+|           
++---analytics
+|   +---api
+|   +---components
+|   \---pages
+|           AnalyticsPage.tsx
+|           
++---apiCatalog
+|   +---api
+|   +---components
+|   \---pages
+|           ApiCatalogPage.tsx
+|           
++---apiDesigner
+|   +---api
+|   +---components
+|   \---pages
+|           ApiDesignerPage.tsx
+|           
++---apiLifecycle
+|   +---api
+|   +---components
+|   \---pages
+|           ApiLifecyclePage.tsx
+|           
++---applications
+|   +---api
+|   +---components
+|   \---pages
+|           ApplicationsPage.tsx
+|           
++---audit
+|   +---components
+|   +---pages
+|   \---state
++---auditLogs
+|   +---api
+|   +---components
+|   \---pages
+|           AuditLogsPage.tsx
+|           
++---auth
+|   +---components
+|   +---hooks
+|   +---pages
+|   |       LoginPage.tsx
+|   |       
+|   +---services
+|   +---state
+|   \---types
++---authentication
+|   +---api
+|   +---components
+|   \---pages
+|           LoginPage.tsx
+|           
++---consumers
+|   +---api
+|   +---components
+|   \---pages
+|           ConsumersPage.tsx
+|           
++---dashboard
+|   +---api
+|   +---components
+|   \---pages
+|           DashboardPage.tsx
+|           
++---gateway
+|   +---components
+|   +---pages
+|   +---services
+|   \---state
++---gatewayPolicies
+|   +---api
+|   +---components
+|   \---pages
+|           GatewayPoliciesPage.tsx
+|           
++---gatewayRoutes
+|   +---api
+|   +---components
+|   \---pages
+|           GatewayRoutesPage.tsx
+|           
++---identity
+|   +---components
+|   +---pages
+|   \---state
++---monetization
+|   +---api
+|   +---components
+|   \---pages
+|           MonetizationPage.tsx
+|           
++---monitoring
+|   +---api
+|   +---components
+|   +---pages
+|   |       MonitoringPage.tsx
+|   |       
+|   \---state
++---organizations
+|   +---api
+|   +---components
+|   \---pages
+|           OrganizationsPage.tsx
+|           
++---orgs
+|   +---components
+|   +---pages
+|   \---state
++---permissions
+|   +---api
+|   +---components
+|   \---pages
+|           PermissionsPage.tsx
+|           
++---policies
+|   +---components
+|   +---pages
+|   +---services
+|   \---state
++---reports
+|   +---api
+|   +---components
+|   \---pages
+|           ReportsPage.tsx
+|           
++---roles
+|   +---api
+|   +---components
+|   +---pages
+|   |       RolesPage.tsx
+|   |       
+|   \---state
++---subscriptions
+|   +---api
+|   +---components
+|   \---pages
+|           SubscriptionsPage.tsx
+|           
++---users
+|   +---api
+|   +---components
+|   +---pages
+|   |       UsersPage.tsx
+|   |       
+|   \---state
++---workflowApprovals
+|   +---api
+|   +---components
+|   \---pages
+|           WorkflowApprovalsPage.tsx
+|           
+\---workflows
+    +---components
+    +---pages
+    \---state
