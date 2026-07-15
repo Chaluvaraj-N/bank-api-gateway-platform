@@ -15,9 +15,7 @@ export default defineConfig({
       "@styles": "/src/styles"
     }
   },
-  css: {
-    postcss: null
-  }
 });
+
 
 

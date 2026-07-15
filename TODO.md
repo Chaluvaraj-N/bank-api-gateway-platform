@@ -1,6 +1,11 @@
-- [x] Update GatewayRoutesPage.jsx to fetch live data from GET /gateway/routes and replace mock rows.
-- [x] Implement loading, error, and empty states.
-- [x] Implement safe normalization for array and paginated ({items,total}) responses.
-- [x] Update table columns to: Route Path, Environment, Authentication Type, Status, API Name, Created Date.
-- [x] Ensure npm run build succeeds.
+# TODO
+
+- [ ] Explore Tailwind/Vite/PostCSS configuration and entry CSS imports.
+- [ ] Remove ambiguity: delete `frontend/tailwind.config.ts` so Tailwind uses only `frontend/tailwind.config.js`.
+- [ ] Ensure `frontend/tailwind.config.js` matches the required `content` + empty `theme.extend` + empty `plugins`.
+- [ ] Confirm `frontend/src/styles/theme/global.css` imports Tailwind directives in correct order.
+- [ ] Rebuild frontend: `cd frontend && npm run build`.
+- [ ] Inspect built CSS in `frontend/dist/assets/*.css` for selectors `.bg-white`, `.rounded-xl`, `.shadow-sm`, `.grid`.
+- [ ] Report evidence (lines/regex matches) proving which selectors exist.
+- [ ] If any selector missing, diagnose Tailwind v4 scanning/content resolution and apply smallest fix; rebuild and re-verify.
 

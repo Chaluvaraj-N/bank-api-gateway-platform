@@ -57,6 +57,7 @@ function SectionTitle({ title, subtitle }) {
   );
 }
 
+
 function Table({ title, columns, rows }) {
   return (
     <section className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
