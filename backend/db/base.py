@@ -1,4 +1,5 @@
-"""SQLAlchemy declarative base (skeleton)."""
+from sqlalchemy.orm import DeclarativeBase
 
-# TODO: from sqlalchemy.orm import DeclarativeBase
 
+class Base(DeclarativeBase):
+    pass

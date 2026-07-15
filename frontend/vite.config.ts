@@ -6,9 +6,18 @@ export default defineConfig({
   server: {
     port: 3001
   },
+  resolve: {
+    alias: {
+      "@app": "/src/app",
+      "@features": "/src/features",
+      "@shared": "/src/shared",
+      "@widgets": "/src/widgets",
+      "@styles": "/src/styles"
+    }
+  },
   css: {
-    // Avoid external PostCSS config resolution (prevents encoding-related JSON parse failures)
     postcss: null
   }
 });
+
 

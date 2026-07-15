@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any, Generic, Optional, TypeVar
+
 
 from sqlalchemy import and_, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -9,6 +11,24 @@ from backend.apps.users.models import User
 
 
 TModel = TypeVar("TModel")
+
+
+@dataclass(frozen=True)
+class PaginationResult(Generic[TModel]):
+    items: list[TModel]
+    total: int
+    limit: int
+    offset: int
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "items": self.items,
+            "total": self.total,
+            "limit": self.limit,
+            "offset": self.offset,
+        }
+
+
 
 
 class AsyncRepository(Generic[TModel]):

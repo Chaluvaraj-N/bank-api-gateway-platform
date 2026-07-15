@@ -1,4 +1,6 @@
-"""FastAPI dependencies (skeleton)."""
+from backend.db.session import get_db
 
-# TODO: Add auth dependency (JWT) and request-scoped dependencies
 
+async def get_async_session():
+    async for session in get_db():
+        yield session

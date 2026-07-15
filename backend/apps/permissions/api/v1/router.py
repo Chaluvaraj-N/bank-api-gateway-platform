@@ -4,7 +4,7 @@ from typing import Any, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 
-from backend.apps.permissions.permission_checker import require_permission  # type: ignore
+from backend.apps.roles.permission_checker import require_permission  # type: ignore
 
 from backend.apps.roles.permission_checker import require_permission as rbac_require_permission
 from backend.apps.permissions.schemas import (

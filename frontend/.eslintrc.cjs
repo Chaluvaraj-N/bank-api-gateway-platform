@@ -1,12 +1,6 @@
 ﻿/* eslint-env node */
-module.exports = {
-  root: true,
-  parserOptions: { ecmaVersion: 2024, sourceType: "module" },
-  plugins: ["react-hooks", "react-refresh"],
-  extends: ["eslint:recommended"],
-  rules: {
-    "react-hooks/rules-of-hooks": "error",
-    "react-refresh/only-export-components": "warn"
-  },
-  settings: { react: { version: "detect" } }
-};
+// This file is intentionally left empty.
+// ESLint v9 flat config expects eslint.config.* at the project root.
+// Keeping this prevents older tooling from failing if it still looks for .eslintrc.*.
+export {};
+
