@@ -5,7 +5,7 @@ import { AppProviders } from "@app/layouts/AppProviders";
 import { AppRoutes } from "@app/routes/AppRoutes";
 import "@styles/theme/global.css";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <AppProviders>
