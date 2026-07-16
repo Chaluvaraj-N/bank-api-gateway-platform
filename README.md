@@ -61,23 +61,23 @@ Operational Metrics
 System Status Dashboard
 System Architecture
 ┌──────────────────────────┐
-│       React Frontend      │
-│  Enterprise Admin Portal  │
+│       React Frontend     │
+│  Enterprise Admin Portal │
 └────────────┬─────────────┘
              │ REST API
              ▼
 ┌──────────────────────────┐
-│       FastAPI Backend     │
-│ Authentication & RBAC     │
-│ API Management Services   │
-│ Gateway Services          │
+│       FastAPI Backend    │
+│ Authentication & RBAC    │
+│ API Management Services  │
+│ Gateway Services         │
 └────────────┬─────────────┘
              │
              ▼
 ┌──────────────────────────┐
-│         MySQL DB          │
-│ Users, Roles, APIs,       │
-│ Organizations, Routes     │
+│         MySQL DB         │
+│ Users, Roles, APIs,      │
+│ Organizations, Routes    │
 └──────────────────────────┘
 Technology Stack
 Frontend
@@ -217,6 +217,7 @@ http://127.0.0.1:8000
 Swagger:
 
 http://127.0.0.1:8000/docs
+
 Frontend
 cd frontend
 
