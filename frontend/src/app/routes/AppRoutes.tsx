@@ -1,47 +1,167 @@
 ﻿import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { LoginPage } from "@features/auth/pages/LoginPage";
+
+import LoginPage from "@features/auth/pages/LoginPage";
 
 import DashboardPage from "@features/dashboard/pages/DashboardPage";
 import ApiCatalogPage from "@features/apiCatalog/pages/ApiCatalogPage";
 import ApiLifecyclePage from "@features/apiLifecycle/pages/ApiLifecyclePage";
 import ApiVersionsPage from "@features/apiVersions/pages/ApiVersionsPage";
+
 import GatewayRoutesPage from "@features/gatewayRoutes/pages/GatewayRoutesPage";
+
 import AnalyticsPage from "@features/analytics/pages/AnalyticsPage";
+import MonitoringPage from "@features/monitoring/pages/MonitoringPage";
+
 import ApplicationsPage from "@features/applications/pages/ApplicationsPage";
 import SubscriptionsPage from "@features/subscriptions/pages/SubscriptionsPage";
+
 import OrganizationsPage from "@features/organizations/pages/OrganizationsPage";
 import UsersPage from "@features/users/pages/UsersPage";
 import RolesPage from "@features/roles/pages/RolesPage";
 
+import ProtectedRoute from "./ProtectedRoute";
 
 export function AppRoutes() {
-
   return (
     <Routes>
+      {/* Login */}
       <Route path="/login" element={<LoginPage />} />
 
-      <Route path="/dashboard" element={<DashboardPage />} />
+      {/* Dashboard */}
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <DashboardPage />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/api-catalog" element={<ApiCatalogPage />} />
-      <Route path="/api-lifecycle" element={<ApiLifecyclePage />} />
-      <Route path="/api-versions" element={<ApiVersionsPage />} />
+      {/* API Management */}
+      <Route
+        path="/api/catalog"
+        element={
+          <ProtectedRoute>
+            <ApiCatalogPage />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/gateway-routes" element={<GatewayRoutesPage />} />
+      <Route
+        path="/api/lifecycle"
+        element={
+          <ProtectedRoute>
+            <ApiLifecyclePage />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/applications" element={<ApplicationsPage />} />
-      <Route path="/subscriptions" element={<SubscriptionsPage />} />
+      <Route
+        path="/api/versions"
+        element={
+          <ProtectedRoute>
+            <ApiVersionsPage />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/analytics" element={<AnalyticsPage />} />
+      {/* Gateway */}
+      <Route
+        path="/gateway/routes"
+        element={
+          <ProtectedRoute>
+            <GatewayRoutesPage />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/organizations" element={<OrganizationsPage />} />
-      <Route path="/users" element={<UsersPage />} />
-      <Route path="/roles" element={<RolesPage />} />
+      {/* Consumers */}
+      <Route
+        path="/consumers/applications"
+        element={
+          <ProtectedRoute>
+            <ApplicationsPage />
+          </ProtectedRoute>
+        }
+      />
 
+      <Route
+        path="/consumers/subscriptions"
+        element={
+          <ProtectedRoute>
+            <SubscriptionsPage />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      {/* Analytics */}
+      <Route
+        path="/analytics/overview"
+        element={
+          <ProtectedRoute>
+            <AnalyticsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/analytics/monitoring"
+        element={
+          <ProtectedRoute>
+            <MonitoringPage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Settings */}
+      <Route
+        path="/settings/organizations"
+        element={
+          <ProtectedRoute>
+            <OrganizationsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/settings/users-roles"
+        element={
+          <ProtectedRoute>
+            <UsersPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/users"
+        element={
+          <ProtectedRoute>
+            <UsersPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/roles"
+        element={
+          <ProtectedRoute>
+            <RolesPage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Root */}
+      <Route
+        path="/"
+        element={<Navigate to="/login" replace />}
+      />
+
+      {/* Unknown routes */}
+      <Route
+        path="*"
+        element={<Navigate to="/login" replace />}
+      />
     </Routes>
   );
 }
-

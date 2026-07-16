@@ -1,47 +1,158 @@
-import React from "react";
-import { EnterpriseLayout } from "@shared/components/layout/EnterpriseLayout";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Shield, Lock, Mail } from "lucide-react";
 
-export function LoginPage() {
+export default function LoginPage() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("admin@bank.com");
+  const [password, setPassword] = useState("admin123");
+
+const handleLogin = (e) => {
+  e.preventDefault();
+
+  localStorage.setItem("token", "demo-token");
+  localStorage.setItem("user", email);
+
+  navigate("/dashboard");
+};
+
   return (
-    <EnterpriseLayout
-      rightPanel={
-        <div className="space-y-6">
-          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
-            <div className="font-semibold text-slate-900">Security</div>
-            <div className="text-sm text-slate-500 mt-1">Mock sign-in for UI preview.</div>
+    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+      <div className="w-full max-w-5xl bg-white rounded-2xl shadow-xl overflow-hidden grid lg:grid-cols-2">
+        
+        {/* Left Side */}
+        <div className="bg-[#0b1f3b] text-white p-10 flex flex-col justify-center">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-14 h-14 rounded-xl bg-white text-[#0b1f3b] flex items-center justify-center">
+              <Shield size={28} />
+            </div>
+
+            <div>
+              <h1 className="text-2xl font-bold">
+                Bank API Gateway
+              </h1>
+
+              <p className="text-slate-300 text-sm">
+                Enterprise Management Console
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4 mt-8">
+            <div className="flex gap-3">
+              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                <Shield size={18} />
+              </div>
+
+              <div>
+                <h3 className="font-semibold">
+                  Secure Access Control
+                </h3>
+
+                <p className="text-sm text-slate-300">
+                  Role based enterprise authentication.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                <Lock size={18} />
+              </div>
+
+              <div>
+                <h3 className="font-semibold">
+                  API Governance
+                </h3>
+
+                <p className="text-sm text-slate-300">
+                  Manage APIs, policies and lifecycle.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      }
-    >
-      <div className="p-5 md:p-6">
-        <div className="max-w-md mx-auto">
-          <div className="text-slate-900 text-2xl font-bold">Welcome back</div>
-          <div className="text-slate-500 text-sm mt-1">Sign in to your banking admin console.</div>
 
-          <div className="mt-6 bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
-            <label className="text-sm font-semibold text-slate-700">Email</label>
-            <input
-              className="mt-2 w-full px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="admin@bank.com"
-            />
+        {/* Right Side */}
+        <div className="p-10 flex flex-col justify-center">
+          <div className="max-w-md mx-auto w-full">
+            <h2 className="text-3xl font-bold text-slate-900">
+              Sign In
+            </h2>
 
-            <label className="text-sm font-semibold text-slate-700 mt-4 block">Password</label>
-            <input
-              type="password"
-              className="mt-2 w-full px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="••••••••"
-            />
+            <p className="text-slate-500 mt-2">
+              Access the Bank API Gateway platform.
+            </p>
 
-            <button className="mt-5 w-full px-4 py-2 rounded-lg bg-[#2563eb] text-white font-semibold hover:bg-[#1d4ed8]">
-              Sign in
-            </button>
+            <form onSubmit={handleLogin} className="mt-8 space-y-5">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Email Address
+                </label>
 
-            <div className="text-xs text-slate-500 mt-3">UI only — no backend integration yet.</div>
+                <div className="relative">
+                  <Mail
+                    size={18}
+                    className="absolute left-3 top-3.5 text-slate-400"
+                  />
+
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="admin@bank.com"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Password
+                </label>
+
+                <div className="relative">
+                  <Lock
+                    size={18}
+                    className="absolute left-3 top-3.5 text-slate-400"
+                  />
+
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter password"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold py-3 rounded-lg transition"
+              >
+                Login
+              </button>
+            </form>
+
+            <div className="mt-6 p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p className="text-sm text-slate-600">
+                Demo Credentials
+              </p>
+
+              <p className="text-sm font-medium text-slate-800 mt-1">
+                admin@bank.com
+              </p>
+
+              <p className="text-sm font-medium text-slate-800">
+                admin123
+              </p>
+            </div>
           </div>
         </div>
+
       </div>
-    </EnterpriseLayout>
+    </div>
   );
 }
-
-

@@ -41,6 +41,7 @@ const SectionTitle = ({ children }) => (
   </div>
 );
 
+
 export function SidebarNav() {
   return (
     <nav className="flex-1 overflow-y-auto pb-6">
@@ -73,6 +74,7 @@ export function SidebarNav() {
       <NavItem to="/settings/audit-logs" icon={Settings} label="Audit Logs" />
       <NavItem to="/settings/config" icon={Settings} label="Configuration" />
     </nav>
+    
   );
 }
 

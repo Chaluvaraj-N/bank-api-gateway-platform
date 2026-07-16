@@ -4,8 +4,7 @@ from sqlalchemy.ext.asyncio import (
     async_sessionmaker,
 )
 
-DATABASE_URL = "mysql+aiomysql://root:password@localhost:3306/bank_api_gateway"
-
+DATABASE_URL = "mysql+aiomysql://root:MYSQLFISH@localhost:3306/bank_api_gateway"
 engine = create_async_engine(
     DATABASE_URL,
     echo=True,

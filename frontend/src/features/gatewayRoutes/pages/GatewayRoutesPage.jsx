@@ -3,6 +3,27 @@ import { EnterpriseLayout } from "@shared/components/layout/EnterpriseLayout";
 import { RightPanel } from "@features/dashboard/pages/RightPanel";
 import { apiClient } from "@app/api/client";
 
+<div className="mt-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+  <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <p className="text-sm text-slate-500">Active Routes</p>
+    <h3 className="text-3xl font-bold text-slate-900 mt-2">148</h3>
+  </div>
+
+  <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <p className="text-sm text-slate-500">Requests / Min</p>
+    <h3 className="text-3xl font-bold text-blue-600 mt-2">84K</h3>
+  </div>
+
+  <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <p className="text-sm text-slate-500">Avg Latency</p>
+    <h3 className="text-3xl font-bold text-emerald-600 mt-2">128ms</h3>
+  </div>
+
+  <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <p className="text-sm text-slate-500">Success Rate</p>
+    <h3 className="text-3xl font-bold text-indigo-600 mt-2">99.8%</h3>
+  </div>
+</div>
 
 
 function RoutePill({ tone, children }) {

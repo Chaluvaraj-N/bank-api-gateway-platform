@@ -163,17 +163,18 @@ export function Dashboard() {
     { consumer: "LedgerSync", calls: "186K", error: "0.08%" },
   ];
 
-  const [kpiCounts, setKpiCounts] = useState({
-    organizations: 0,
-    users: 0,
-    roles: 0,
-    apiManager: 0,
-    gatewayRoutes: 0,
-  });
-  const [loadingKpis, setLoadingKpis] = useState(true);
-  const [kpisError, setKpisError] = useState(null);
+const [kpiCounts] = useState({
+  organizations: 64,
+  users: 1148,
+  roles: 18,
+  apiManager: 186,
+  gatewayRoutes: 148,
+});
 
-  const getCountFromResponse = (data) => {
+const loadingKpis = false;
+const kpisError = null;
+
+const getCountFromResponse = (data) => {
     if (!data) return 0;
     if (Array.isArray(data)) return data.length;
     if (typeof data === "object") {
